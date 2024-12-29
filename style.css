@@ -1,0 +1,145 @@
+/* General Styling */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-image: url('images.jpeg');
+  background-size: center;
+  color: #fff;
+  text-align: center;
+  height: 100vh;
+  top: 10px;
+  background-size: 1000px;
+  background-position: center;
+}
+
+/* Header Styling */
+header {
+  background-color: purple;
+  padding: 10px;
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+}
+
+.dots-btn {
+  background: none;
+  color: white;
+  font-size: 34px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: #444;
+  min-width: 100px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: white;
+  padding: 20px 60px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #555;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Info Boxes */
+.info-box {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px 0;
+}
+
+.box {
+  background-color: purple;
+  padding: 15px;
+  border-radius: 5px;
+  width: 30%;
+}
+
+/* Button Group */
+.button-group {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px;
+}
+
+.button-group button {
+  background-color: blue;
+  color: white;
+  padding: 8px 15px; /* Reduced size */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Text Box */
+.text-box {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  margin: 20px;
+  border-radius: 5px;
+}
+
+.panda {
+  background-color: purple;
+  border: none;
+  padding: 10px;
+  margin: 0px;
+  color: greenyellow;
+}
+
+.referbtn {
+  color: white;
+}
+
+
+
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background: #333;
+            padding: 10px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .slider {
+            width: 400px; /* Adjust the width as per your requirement */
+            height: 300px; /* Adjust the height as per your requirement */
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slide {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 100%;
+            opacity: 0;
+            transition: all 1s ease-in-out;
+        }
+
+        .slide.active {
+            left: 0;
+            opacity: 1;
+        }

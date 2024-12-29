@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 160vh;
+            margin: 0;
+            background-color: #f4f4f9;
+        }
+        .container {
+            width: 300px;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        .box {
+            padding: 10px;
+            margin-bottom: 10px;
+            background: #e8e8e8;
+            border-radius: 5px;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .box input {
+            width: calc(100% - 40px);
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        .box button {
+            padding: 10px;
+            font-size: 14px;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .box button:hover {
+            background: #0056b3;
+        }
+        .submit-btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+        }
+        .submit-btn:hover {
+            background: #0056b3;
+        }
+           .blue {
+     background-color: wheat;
+     color: block;
+   }
+    </style>
+    <script>
+        function copyNumber() {
+            const number = document.getElementById("account-number");
+            navigator.clipboard.writeText(number.value).then(() => {
+                alert("Account number copied to clipboard!");
+            });
+        }
+
+        function handleSubmit(event) {
+            event.preventDefault(); // Prevent form submission
+            const tidInput = document.getElementById("tid");
+            if (tidInput.value.trim() === "") {
+                alert("TID is required!");
+            } else {
+                alert("Your transaction is completely clear, please wait.");
+            }
+        }
+    </script>
+</head>
+<body>
+    <form class="container" onsubmit="handleSubmit(event)">
+      <label for="account-number">Account Number</label>
+        <div class="box">
+            <input type="text" id="account-number" value="03043150075" readonly>
+            <button type="button" onclick="copyNumber()">Copy</button>
+        </div>
+        <div>
+                <label for="account-number">Account Holders Name</label>
+        <div class="box">
+          <input type="text" id="account-number" value="Ali Nawaz Koso" readonly>
+         </div>
+        
+        <label for="tid">Enter Transaction TID</label>
+        <div class="box">
+            <input type="number" id="tid" placeholder="Enter Serial Number" required>
+        </div>
+        <button type="submit" class="submit-btn">Submit</button>
+        
+        </br> </br>
+        
+        
+       <div class="blue">
+         
+       Important Instructions: </br></br> </br>
+
+1. Please enter your TID/ID carefully. Double-check before submitting.
+ </br>
+ </br>2. Take a screenshot of your transaction and keep it for your records.
+
+ </br> </br>
+3. Copy the account number provided and send your selected amount from your chosen payment method.
+
+ </br> </br>
+4. After completing the transaction, enter your transaction TID/ID and click the submit button.
+
+ </br> </br> </br>
+
+Note:
+Your submitted amount may take 1 to 24 hours for verification, depending on your bank's processing time. Thank you for your patience and cooperation! </div>
+</textarea>
+    </form>
+</body>
+</html>

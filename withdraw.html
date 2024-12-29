@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Withdraw Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f4f7;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 90%;
+            max-width: 600px;
+            margin: 50px auto;
+            background-color: #ffffff;
+            padding: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            font-size: 2em;
+        }
+        .box {
+            width: 100%;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            background-color: #f9f9f9;
+        }
+        .box input, .box select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #fff;
+            font-size: 1em;
+        }
+        .box input:focus, .box select:focus {
+            outline: none;
+            border-color: #4CAF50;
+        }
+        .btn {
+            padding: 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            width: 100%;
+            font-size: 1.1em;
+            margin-top: 20px;
+        }
+        .btn:disabled {
+            background-color: #ddd;
+        }
+        .error {
+            color: red;
+            text-align: center;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        #balanceBox {
+            background-color: #e8f5e9;
+            color: #388e3c;
+            font-size: 1.2em;
+            text-align: center;
+        }
+        select {
+            background-color: #fafafa;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Withdraw</h1>
+        
+        <div class="box" id="balanceBox">
+            <p>Your balance is: <strong id="balanceAmount">100 Rs</strong></p>
+        </div>
+
+        <div class="box">
+            <label for="withdrawAmount">Enter Amount to Withdraw:</label>
+            <input type="number" id="withdrawAmount" class="box" placeholder="Enter amount" oninput="validateAmount()">
+        </div>
+
+        <div class="box">
+            <label for="accountNumber">Enter Account Number:</label>
+            <input type="text" id="accountNumber" class="box" placeholder="Enter your account number">
+        </div>
+
+        <div class="box">
+            <label for="transactionMethod">Select Transaction Method:</label>
+            <select id="transactionMethod" class="box">
+                <option value="jazzcash">JazzCash</option>
+                <option value="easypaisa">EasyPaisa</option>
+            </select>
+        </div>
+
+        <div id="errorMessage" class="error"></div>
+
+        <button id="withdrawButton" class="btn" disabled>Withdraw</button>
+        
+         </br> </br>
+
+        
+        <div>
+
+Important Notes:
+ </br> </br>
+
+1: The minimum withdrawal amount is 250 Rs. Any withdrawal request below this amount will not be processed.
+ </br> </br>
+
+2: Ensure that your balance is sufficient for the withdrawal. If your balance is less than the requested amount, the withdrawal will be denied.
+ </br> </br>
+
+3: You can choose to withdraw using JazzCash or EasyPaisa. Please ensure that you select the correct method.
+ </br> </br>
+
+4: Make sure to provide a valid account number to complete the transaction.
+ </br> </br>
+
+5: The withdraw button will only be activated if the entered amount is greater than or equal to 250 Rs and you have enough balance to cover the withdrawal.
+ </br> </br>
+
+6: If your balance is insufficient, a message will appear, and the withdraw button will remain disabled.
+ </br> </br>
+
+
+
+        </div>
+        
+    </div>
+    
+    
+    <script>
+        const balance = 100;  // Balance is set to 100 Rs (this can be updated as per the actual balance)
+
+        function validateAmount() {
+            const withdrawAmount = parseFloat(document.getElementById('withdrawAmount').value);
+            const withdrawButton = document.getElementById('withdrawButton');
+            const errorMessage = document.getElementById('errorMessage');
+            const balanceBox = document.getElementById('balanceAmount');
+
+            // Check if the amount is greater than or equal to 250
+            if (withdrawAmount < 250) {
+                withdrawButton.disabled = true;
+                errorMessage.textContent = 'The minimum withdrawal amount is 250 Rs.';
+                return;
+            }
+
+            // Check if the balance is sufficient for withdrawal
+            if (withdrawAmount > balance) {
+                withdrawButton.disabled = true;
+                errorMessage.textContent = 'Insufficient balance to complete the withdrawal.';
+            } else {
+                withdrawButton.disabled = false;
+                errorMessage.textContent = ''; // Clear any previous error messages
+            }
+        }
+
+        // Initially check if the balance is enough to show the withdraw button
+        if (balance < 250) {
+            document.getElementById('withdrawButton').disabled = true;
+            document.getElementById('errorMessage').textContent = 'Insufficient balance to complete the withdrawal.';
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 190vh;
+            margin: 0;
+            background-color: #f4f4f9;
+        }
+        .container {
+            width: 350px;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        .box, .button-group {
+            margin-bottom: 15px;
+        }
+        .box label, .box input, .box select, .button {
+            display: block;
+            width: 100%;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        .box input, .box select {
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: navajowhite;
+            color: black;
+        }
+        .button {
+            background: #e8e8e8;
+            padding: 5px;
+            text-align: center;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+        }
+        .button:hover {
+            background: #d0d0d0;
+        }
+        .submit-btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+            color: white;
+        }
+        .submit-btn:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- My Balance Section -->
+        <div class="box">
+            <label>My Balance</label>
+            <input type="text" value="100" readonly>
+        </div>
+        
+        <div>
+          Select Amount to Recharge 
+        </div>
+
+        <!-- Buttons Section -->
+        <div class="button-group">
+            <div class="button" onclick="setAmount(500)">500</div>
+            <div class="button" onclick="setAmount(1000)">1000</div>
+            <div class="button" onclick="setAmount(2000)">2000</div>
+            <div class="button" onclick="setAmount(5000)">5000</div>
+            <div class="button" onclick="setAmount(10000)">10000</div>
+            <div class="button" onclick="setAmount(20000)">20000</div>
+            <div class="button" onclick="setAmount(50000)">50000</div>
+            <div class="button" onclick="setAmount(100000)">100000</div>
+
+            
+            
+        </div>
+
+        <!-- Selected Amount Box -->
+        <div class="box">
+            <label for="selected-amount">Selected Amount</label>
+            <input type="text" id="selected-amount" placeholder="Click a button to select an amount" readonly required>
+        </div>
+
+        <!-- Account and Payment Method -->
+        <div class="box">
+            <label for="account-number">Enter your account number</label>
+            <input type="text" id="account-number" placeholder="031xxxxxx980" required>
+        </div>
+        <div class="box">
+            <label for="payment-method">Select payment method</label>
+            <select id="payment-method">
+                <option value="jazzcash">JazzCash</option>
+                <option value="easypaisa">EasyPaisa</option>
+            </select>
+        </div>
+        <!-- Submit Button -->
+              <button type="submit" class="submit-btn"<a href="submit2.html"> <div>submit</div>
+                </a></button>
+      <div>
+         </br> </br>
+1: The minimum deposit amount is Rs500
+
+ </br> </br>
+
+2: Charging time: You can recharge the wallet at any time 24/7,  it will be automatically Received in real time.
+
+ </br> </br>
+
+3: Customer service hours: Monday to Sunday 9:00Am - 8:00Pm
+
+ </br> </br>
+
+4: Every time you recharge, you need to obtain the latest payment account number from the APP. The recharge amount must be consistent with the mobile banking transfer amount, otherwise the recharge amount will not be credited.
+ </br> </br>
+
+
+5: If the payment is successful but has not been reflected in the account balance for a long time, please contact customer service  provide the payment voucher with your registered mobile phone number.
+
+</br> </br>
+</div>
+
+    </div>
+
+    <script>
+        // Function to set the selected amount in the input box
+        function setAmount(value) {
+            document.getElementById('selected-amount').value = value;
+        }
+    </script>
+</body>
+</html>
